@@ -10,35 +10,36 @@ function Cards() {
         <div className="cards__wrapper">
           <ul className="cards__items">
             <CardItem
-              src="images/img-9.jpg"
-              text="Explore the hidden waterfall deep inside the Amazon Jungle"
-              label="Adventure"
+              src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2021/04/csmt-1617950384.jpg"
+              text="Explore the Metro cities of India"
+              label="Metro City"
               path="/dashboard"
             />
             <CardItem
-              src="images/img-2.jpg"
-              text="Travel through the Islands of Bali in a Private Cruise"
-              label="Luxury"
+              src="https://pbs.twimg.com/media/C4e0luSVcAEf2yC.jpg"
+              text="Travel through the Forest of South in asthetic train"
+              label="South"
               path="/dashboard"
             />
+            
           </ul>
           <ul className="cards__items">
             <CardItem
-              src="images/img-3.jpg"
-              text="Set Sail in the Atlantic Ocean visiting Uncharted Waters"
+              src="http://erail.in/blog/Images/Post/beautiful-railway-station-hi_1.jpg"
+              text="Set Sail in the cloud visiting Hills of North"
               label="Mystery"
               path="/dashboard"
             />
             <CardItem
-              src="images/img-4.jpg"
-              text="Experience Football on Top of the Himilayan Mountains"
-              label="Adventure"
+              src="https://i.pinimg.com/originals/f6/4a/5c/f64a5cc7b5ac5b3c0a974eac7ddb7939.jpg"
+              text="Experience unexplored places of historic India"
+              label="Kaula"
               path="/dashboard"
             />
             <CardItem
-              src="images/img-8.jpg"
-              text="Ride through the Sahara Desert on a guided camel tour"
-              label="Adrenaline"
+              src="https://static.toiimg.com/photo/61202140.cms"
+              text="Ride through the Luxury of Culture"
+              label="Luxury"
               path="/dashboard"
             />
           </ul>

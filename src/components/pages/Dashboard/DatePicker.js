@@ -43,8 +43,11 @@ function DatePicker() {
         type="number"
         name="numberOfPeople"
       />
+  
+      
       <Button onClick={() => console.log(values)}>Search Travigo</Button>
     </div>
+   
   );
 }
 

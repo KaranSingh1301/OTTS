@@ -7,6 +7,7 @@ import SignUp from "./components/pages/SignUp/SignUp";
 import Login from "./components/pages/Login/Login";
 import Profile from "./components/pages/Profile/Profile";
 import Dashboard from "./components/pages/Dashboard/Dashboard";
+import Payment from "./components/pages/Payment/Payment"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { TravelProvider } from "./context";
 import { ToastProvider } from "react-toast-notifications";
@@ -23,7 +24,8 @@ function App() {
           <Route path="/profile" component={Profile} />
           <Route path="/" exact component={Home} />
           <Route path="/sign-up" component={SignUp} />
-            <Route path="/login" component={Login} />
+          <Route path="/login" component={Login} />
+          <Route path="/payment" component={Payment} />
           </ToastProvider>
         </Switch>
       </Router>

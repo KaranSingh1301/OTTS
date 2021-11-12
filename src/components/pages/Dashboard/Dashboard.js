@@ -6,10 +6,13 @@ import "./Dashboard.css";
 import SearchResult from "../../results/SearchResult";
 import { getHotels } from "../../../action/general-action";
 import { useToasts } from "react-toast-notifications";
+import { useHistory } from "react-router-dom";
 
 function Dashboard() {
+  let history = useHistory();
   const [results, setResults] = useState([]);
   const { addToast } = useToasts();
+  const [flag, setFlag] = useState(false);
   const validate = (values) => {
     const errors = {};
     if (!values.checkIn) {
@@ -26,17 +29,27 @@ function Dashboard() {
     return errors;
   };
 
+  const routetopaymentpage = () => {
+    //console.log("clicked")
+    setFlag(true);
+    if(flag)
+    {
+      history.push("/payment")
+    }
+  }
+
   const formik = useFormik({
     initialValues: {
-      checkIn: "",
+      To: "",
       checkOut: "",
       numberOfPeople: 1,
       numberOfKids: 0,
-      location: "new delhi",
+      From: "New Delhi",
     },
     validate,
     onSubmit: (values) => {
-      getHotels(values.location)
+      
+      getHotels(values.From)
         .then((res) => {
           if (res) {
             addToast("Hotels previewed are shown below!", {
@@ -59,11 +72,11 @@ function Dashboard() {
         <form className="dashboard__formInput" onSubmit={formik.handleSubmit}>
           <div className="dashboard__formInputTop">
             <div className="dashboard__block">
-              <div className="dashboard__line1 f-text">Location</div>
+              <div className="dashboard__line1 f-text">From</div>
               <input
                 className="dashboard__line2 big"
                 type="text"
-                name="location"
+                name="From"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.location}
@@ -75,11 +88,11 @@ function Dashboard() {
               </div>
             ) : null}
             <div className="dashboard__block">
-              <div className="dashboard__line1 f-text">Check In</div>
+              <div className="dashboard__line1 f-text">To</div>
               <input
                 className="dashboard__line2 big"
-                type="date"
-                name="checkIn"
+                type="text"
+                name="To"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.checkIn}
@@ -91,7 +104,7 @@ function Dashboard() {
               </div>
             ) : null}
             <div className="dashboard__block">
-              <div className="dashboard__line1 f-text">Check Out</div>
+              <div className="dashboard__line1 f-text">Date</div>
               <input
                 className="dashboard__line2 big"
                 type="date"
@@ -134,13 +147,37 @@ function Dashboard() {
                 onBlur={formik.handleBlur}
                 value={formik.values.numberOfKids}
               ></input>
+             
             </div>
             <div className="dashboard__block">
+            <div className="dashboard__line1 f-text">Classes</div>
+            <select name="classes" id="classes" className="dashboard__line2 big">
+                <option value="classes">select</option>
+                <option value="1A">AC first Class(1A)</option>
+                <option value="EC">Exec. Chair Car (EC)</option>
+                <option value="SL">Sleeper(SL)</option>
+                <option value="CC">AC Chair car(CC)</option>
+              </select>
+            </div>
+            <div className="dashboard__block">
+            <div className="dashboard__line1 f-text ">Category</div>
+            <select name="category" id="category" className="dashboard__line2 bigq">
+                <option value="general">General</option>
+                <option value="1A">Ladies</option>
+                <option value="EC">Divyaang</option>
+                <option value="SL">Tatkal</option>
+                <option value="CC">Premium Tatkal</option>
+              </select>
+            </div>
+           
+            <div className="dashboard__block search_block">
               <div className="dashboard__line1 f-text "></div>
-              <button className="dashboard__button" type="submit">
-                Search
+              <button className="dashboard__button" type="submit" onClick={routetopaymentpage}>
+                Booking
               </button>
             </div>
+         
+            
           </div>
         </form>
       </div>
@@ -149,22 +186,22 @@ function Dashboard() {
         <Fragment>
           <div className="dashboard__section">
             <DashboardCard
-              src="https://a0.muscache.com/im/pictures/d1858d9e-be18-4c50-bbbf-8b19d6ef8edc.jpg?im_w=720"
-              title="Online Experiences"
+              src="https://res.cloudinary.com/dlanbfgjm/images/f_auto,q_auto/w_780,h_464,c_fill,g_auto/v1580377941/6yvwnyjxzuztv7qz_1580188155_nyvfak/6yvwnyjxzuztv7qz_1580188155_nyvfak-780x464.jpg"
+              title="International Package"
               description="Unique activities we can do together, led by a world of hosts."
             />
             <DashboardCard
-              src="https://a0.muscache.com/im/pictures/15159c9c-9cf1-400e-b809-4e13f286fa38.jpg?im_w=720"
-              title="Unique stays"
-              description="Spaces that are more than just a place to sleep."
+              src="https://www.bontravelindia.com/wp-content/uploads/2021/10/Buddhist-Circuit-Tourist-Train-1000x565.jpg"
+              title="Buddhist Circuit Tourist Train"
+              description="India, the country where Buddhism originated has rich memories of the Buddhist legacy."
             />
             <DashboardCard
-              src="https://a0.muscache.com/im/pictures/fdb46962-10c1-45fc-a228-d0b055411448.jpg?im_w=720"
-              title="Entire homes"
-              description="Comfortable private places, with room for friends or family."
+              src="https://blog-content.ixigo.com/wp-content/uploads/2018/05/blog11.jpg"
+              title="Rail Tour Packages"
+              description="Comfortable places, with room for friends or family."
             />
           </div>
-          <div className="dashboard__section">
+          {/* <div className="dashboard__section">
             <DashboardCard
               src="https://media.nomadicmatt.com/2019/airbnb_breakup3.jpg"
               title="3 Bedroom Flat in Bournemouth"
@@ -183,7 +220,7 @@ function Dashboard() {
               description="Superhost with great amenities and a fabolous shopping complex nearby"
               price="Rs 2700/night"
             />
-          </div>
+          </div> */}
         </Fragment>
       )}
       {results.length > 0 && (

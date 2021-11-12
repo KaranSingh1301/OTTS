@@ -12,23 +12,9 @@ function Services() {
         <div className="services__wrapper">
           <ul className="services__items">
             <CardItem
-              src="images/hotel.jpg"
-              text="Explore some of the best options of a stay"
-              label="Hotels"
-              path="/dashboard"
-            />
-            <CardItem
-              src="images/meal.jpg"
-              text="Food that is die for"
-              label="Meals"
-              path="/dashboard"
-            />
-          </ul>
-          <ul className="services__items">
-            <CardItem
-              src="images/flight.jpg"
-              text="FLy to your Dream Destination in style"
-              label="Flights"
+              src="https://assets.traveltriangle.com/blog/wp-content/uploads/2016/08/Luxury-trains-in-India..jpg"
+              text="Explore some of the Luxury options to Travel"
+              label="Maharaja Express"
               path="/dashboard"
             />
             <CardItem
@@ -37,10 +23,26 @@ function Services() {
               label="Trains"
               path="/dashboard"
             />
+            
+          </ul>
+          <ul className="services__items">
             <CardItem
-              src="images/bus.jpg"
-              text="Unlock the joy with the best buses to for travel"
-              label="Bus"
+              src="https://img.dtnext.in/Articles/2021/May/202105081922265728_Rail-union-demands-parity-in-compensation-with-frontline_SECVPF.gif"
+              text="Sanitization is our priority"
+              label="Sanitization"
+              path="/dashboard"
+            />
+            <CardItem
+              src="https://thumbs.dreamstime.com/z/hauptbahnhof-berlin-central-train-station-food-court-germany-people-visit-158502947.jpg"
+              text="24*7 Food that is die for"
+              label="Meals"
+              path="/dashboard"
+            />
+            
+            <CardItem
+              src="https://www.pnrstatus.io/wp-content/uploads/2020/08/compressed-q1t3.jpg"
+              text="Wait in Peace"
+              label="Waiting Area"
               path="/dashboard"
             />
           </ul>

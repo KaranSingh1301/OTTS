@@ -1,11 +1,12 @@
 .banner {
   height: 50vh;
   position: relative;
-  background-image: url("https://a0.muscache.com/pictures/5fcbb0af-ace5-47bb-b251-eba6ada69681.jpg");
+  background-image: url("https://www.pngitem.com/pimgs/m/538-5383356_free-indian-train-png-make-in-indian-railways.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
   background-position-y: center;
+  background-size: auto;
 }
 .banner__search {
   /* top: 0; */
@@ -18,13 +19,13 @@
   text-transform: inherit !important;
   color: black !important;
 }
-.banner__info {
+/* .banner__info {
   background-color: black;
   color: white;
   padding: 10vh 30px 40px;
   width: 300px;
   height: 92%;
-}
+} */
 .banner__info > h5 {
   margin-top: 10px;
 }
