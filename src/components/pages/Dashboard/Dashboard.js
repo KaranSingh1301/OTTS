@@ -181,7 +181,7 @@ function Dashboard() {
           </div>
         </form>
       </div>
-      <Banner />
+      {/* <Banner /> */}
       {results.length === 0 && (
         <Fragment>
           <div className="dashboard__section">
